@@ -12,8 +12,7 @@ TOKEN = '5434640983:AAEr5Swzwl8Bul8Wfd7NZNr6MYZGwmI4pvs'
 bot = telegram.Bot(token=TOKEN)
 
 # Defina o horário em que a enquete será enviada (no formato HH:MM)
-horario_envio = '00:32'
-
+horario_envio = '19:30'
 
 def remove_bom_from_csv(filename):
     with codecs.open(filename, 'r', encoding='utf-8') as file:
@@ -49,10 +48,7 @@ async def enviar_enquete_e_explicacao():
     pergunta, opcoes, resposta_correta, explicacao = await get_random_question()
 
     # Envie a enquete
-    poll = await bot.send_poll(chat_id='-826531161', question=pergunta, options=opcoes, correct_option_id=resposta_correta, type="quiz")
-
-    # Envie a explicação
-    await bot.send_message(chat_id='-826531161', text=explicacao)
+    poll = await bot.send_poll(chat_id='-826531161', question=pergunta, options=opcoes, correct_option_id=resposta_correta, explanation=explicacao, type="quiz")
 
 async def main():
     while True:
