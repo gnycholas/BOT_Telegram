@@ -12,7 +12,7 @@ TOKEN = '5434640983:AAEr5Swzwl8Bul8Wfd7NZNr6MYZGwmI4pvs'
 bot = telegram.Bot(token=TOKEN)
 
 # Defina o horário em que a enquete será enviada (no formato HH:MM)
-horario_envio = '05:30'
+horario_envio = '07:39'
 
 def remove_bom_from_csv(filename):
     with codecs.open(filename, 'r', encoding='utf-8') as file:
