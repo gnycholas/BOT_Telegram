@@ -12,7 +12,7 @@ TOKEN = '5434640983:AAEr5Swzwl8Bul8Wfd7NZNr6MYZGwmI4pvs'
 bot = telegram.Bot(token=TOKEN)
 
 # Defina o horário em que a enquete será enviada (no formato HH:MM)
-horario_envio = '19:30'
+horario_envio = '08:00'
 
 def remove_bom_from_csv(filename):
     with codecs.open(filename, 'r', encoding='utf-8') as file:
@@ -27,7 +27,7 @@ async def get_random_question():
     remove_bom_from_csv('questoes.csv')
 
     # Abra o arquivo CSV com as questões
-    with open('questoes.csv', 'r', encoding='utf-8') as csvfile:
+    with open('questoes.csv', 'r', encoding='utf-8') as csvfile:    
         # Crie um leitor de CSV
         reader = csv.DictReader(csvfile, delimiter=';')
 
